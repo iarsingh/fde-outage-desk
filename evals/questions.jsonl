@@ -1,0 +1,3 @@
+{"outage_id":"OUT-1","expected":"ranked","expected_score":112}
+{"outage_id":"OUT-2","expected":"ranked","expected_score":43}
+{"outage_id":"OUT-3","expected":"excluded"}

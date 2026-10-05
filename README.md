@@ -1,5 +1,42 @@
 # Cedar Grid outage desk
 
+<!-- project-guide:start -->
+## Project guide
+
+[Project architecture](PROJECT_ARCHITECTURE.md) · [Interview questions and answers](INTERVIEW_QA.md)
+
+Use the architecture document for the component diagram, implementation boundaries, and verification entry points. The interview guide includes source-backed answers and project walkthroughs.
+
+### Implementation map
+
+| Component | Responsibility |
+| --- | --- |
+| [`src/outage/eval.py`](src/outage/eval.py) | Functions: `run` |
+| [`src/outage/policy.py`](src/outage/policy.py) | Functions: `life_safety_feeders`, `rank_outages`, `render` |
+| [`src/outage/ingest.py`](src/outage/ingest.py) | Functions: `load_accounts`, `load_outages`, `load_cases` |
+| [`requirements.txt`](requirements.txt) | Implementation or supporting configuration |
+| [`src/outage/__init__.py`](src/outage/__init__.py) | Implementation or supporting configuration |
+| [`src/outage/__main__.py`](src/outage/__main__.py) | Functions: `main` |
+| [`Dockerfile`](Dockerfile) | Container build/service configuration |
+| [`tests/test_policy.py`](tests/test_policy.py) | Executable checks and regression examples |
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | GitHub Actions job definitions |
+| [`README.md`](README.md) | Project explanations or operating notes |
+| [`docs/01-discovery.md`](docs/01-discovery.md) | Project explanations or operating notes |
+| [`docs/02-security.md`](docs/02-security.md) | Project explanations or operating notes |
+
+### Local setup and verification
+
+From the repository root (the commands follow the checked-in manifests):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pytest -q
+```
+
+<!-- project-guide:end -->
+
 Simulated forward deployed engagement for Cedar Grid, a regional utility. The storm desk was sorting outages by customer count. A feeder with a registered life-safety account was waiting behind a larger commercial outage. The control room will not let this tool text customers or dispatch a crew by itself.
 
 ## What the desk gets

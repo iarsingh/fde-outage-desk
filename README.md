@@ -68,3 +68,11 @@ python -m outage
 - [Readout](docs/03-readout.md)
 
 The pilot does not claim fewer outage minutes. It claims the life-safety feeder is first, and no customer message is sent.
+
+## Documentation checks
+
+Project architecture, interview guides, and local source links are checked automatically on pushes and pull requests. Run the same check locally:
+
+```bash
+python3 .github/scripts/validate_project_docs.py
+```

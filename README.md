@@ -1,5 +1,12 @@
 # Cedar Grid outage desk
 
+## Overview
+
+A simulated forward deployed engagement for Cedar Grid, a fictional regional utility. Its storm desk sorted outages by customer count, so a feeder serving a registered life-safety account waited behind a larger commercial outage. The ranking tool scores open outages with a large bonus for life-safety feeders plus points for customers affected and minutes out, suggests a crew count, leaves restored outages out of the queue, and states on every card that it does not dispatch crews or message customers. An evaluation command checks the ranking against sample cases.
+
+- **Built with:** Python, pytest, Docker, GitHub Actions
+- **Scope:** Simulated engagement with a fictional customer; it claims no drop in outage minutes, only that life-safety feeders come first.
+
 <!-- project-guide:start -->
 ## Project guide
 
